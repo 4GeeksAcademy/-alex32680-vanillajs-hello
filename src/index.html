@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Excuse Generator</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #excuse {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+    <h1>Excuse Generator</h1>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+    <p id="excuse"></p>
+
+    <script>
+      const excuses = [
+        "My dog ate my homework.",
+        "'My grandma broke the car while I was praying.",
+        " His turtle crushed the keys before class.",
+        "My bird ate my homework when I finished.",
+        "My brother peed the car during my lunch.",
+        "The dog ate the keys while I was praying."
+      ];
+
+      function generateExcuse() {
+        const excuseElement = document.getElementById("excuse");
+        const randomIndex = Math.floor(Math.random() * excuses.length);
+        const randomExcuse = excuses[randomIndex];
+        excuseElement.textContent = randomExcuse;
+      }
+    </script>
   </body>
 </html>
